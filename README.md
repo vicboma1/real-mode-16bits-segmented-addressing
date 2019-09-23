@@ -1,4 +1,4 @@
-#Real mode programming | 16-bits Segemented addressing
+# Real mode programming | 16-bits Segemented addressing
 
 Trazas del desplazamiento y del segmento de memoria
 
@@ -29,4 +29,4 @@ FP_SEG(0000000000100100) | 16
 FP_SEG(0000000000200000) | 32
 ```
 
-@author: Victor Bolinches (@vicboma1)
+@Author: Victor Bolinches (@vicboma1)

@@ -1,2 +1,32 @@
-# real-mode-16bits-segmented-addressing
-Real mode programming 16-bits Segemented addressing
+#Real mode programming | 16-bits Segemented addressing
+
+Trazas del desplazamiento y del segmento de memoria
+
+```c
+
+MK_FP(SEGMENT, OFFSET)
+
+a = MK_FP(0x0000, 0x0120) =  MK_FP(0 ,288) = 0000000000000120
+b = MK_FP(0x0010, 0x0100) =  MK_FP(16,256) = 0000000000100100
+c = MK_FP(0x0020, 0x0000) =  MK_FP(32,0)   = 0000000000200000
+
+MK_FP(0x0000, 0x0120) == MK_FP(0x0010, 0x0100) | a == b | 0
+MK_FP(0x0000, 0x0120) == MK_FP(0x0020, 0x0000) | a == c | 0
+MK_FP(0x0010, 0x0100) == MK_FP(0x0020, 0x0000) | b == c | 0
+
+
+FP_OFF(MK_FP)
+
+FP_OFF(0000000000000120) | 288
+FP_OFF(0000000000100100) | 1048832
+FP_OFF(0000000000200000) | 2097152
+
+
+FP_SEG(MK_FP)
+
+FP_SEG(0000000000000120) | 0
+FP_SEG(0000000000100100) | 16
+FP_SEG(0000000000200000) | 32
+```
+
+@author: Victor Bolinches (@vicboma1)
